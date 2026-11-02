@@ -1,0 +1,15 @@
+{
+  "name": "Nine Lives",
+  "short_name": "Nine Lives",
+  "description": "A deadpan cat on a skateboard. Tap to jump, tap again to spin.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "fullscreen",
+  "orientation": "portrait",
+  "background_color": "#D99AA1",
+  "theme_color": "#D99AA1",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

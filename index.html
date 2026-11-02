@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<title>Nine Lives</title>
+<meta name="description" content="Nine Lives: a deadpan cat on a skateboard. Tap to jump, swipe down to duck.">
+<meta name="theme-color" content="#D99AA1">
+<!-- "Add to Home Screen" on iPhone: full screen, own icon, saves kept safe -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Nine Lives">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" href="icon-192.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="preload" href="img/bg_sky.webp" as="image">
+<link rel="preload" href="img/bg_far.webp" as="image">
+<link rel="stylesheet" href="style.css">
+<script>window.NINE_LIVES_VERSION = '202611021316';</script>
+</head>
+<body>
+<div id="stage">
+  <canvas id="game" aria-label="Nine Lives"></canvas>
+  <div id="ui"></div>
+</div>
+<div id="keys">SPACE or CLICK: jump<br>HOLD: jump higher<br>AGAIN in the air: spin<br>DOWN or SWIPE DOWN: duck<br>ESC: pause</div>
+<div id="loading">
+  <img src="img/logo_title.webp" alt="Nine Lives">
+  <div class="bar"><span></span></div>
+  <div class="loading-text">Loading. He's fine.</div>
+</div>
+<noscript>Nine Lives needs JavaScript.</noscript>
+<script type="module" src="app.js"></script>
+</body>
+</html>
