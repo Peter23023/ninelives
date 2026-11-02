@@ -1,6 +1,6 @@
 // Keeps the game on the phone after the first visit: it opens instantly and works offline.
 // build.sh writes a new VERSION each build, so an update replaces the old files.
-const VERSION = '202611021502';
+const VERSION = '202611021544';
 const CACHE = 'ninelives-' + VERSION;
 const CORE = ['./', 'index.html', 'app.js', 'style.css', 'manifest.webmanifest', 'apple-touch-icon.png', 'icon-192.png'];
 

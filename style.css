@@ -18,7 +18,7 @@ html, body {
 #stage.framed { border-radius: 18px; box-shadow: 0 0 0 3px rgba(244,239,230,.12), 0 18px 60px rgba(0,0,0,.45); }
 #stage.framed .layer { padding: 0; }
 canvas#game { position: absolute; inset: 0; width: 100%; height: 100%; display: block; touch-action: none; }
-#ui { position: absolute; left: 0; top: 0; width: 100%; height: 100%; transform-origin: 0 0; pointer-events: none; touch-action: none; }
+#ui { position: absolute; left: 0; top: 0; width: 100%; height: 100%; transform-origin: 0 0; pointer-events: none; touch-action: pan-y; } /* pan-y: lists can scroll by finger; the game itself (canvas) still takes no gestures */
 /* the keys, beside the game window when there's room (computers) */
 #keys { display: none; position: fixed; left: 24px; bottom: 24px; color: rgba(244,239,230,.55); font-weight: 900; font-size: 13px;
   letter-spacing: 1px; line-height: 1.8; }
@@ -272,7 +272,7 @@ button { font: inherit; border: 0; background: none; color: inherit; padding: 0;
 .board-input { width: 100%; font: inherit; font-size: 18px; font-weight: 900; padding: 10px 14px; border: 3px solid var(--charcoal);
   border-radius: 12px; background: #fff; color: var(--charcoal); -webkit-user-select: text; user-select: text; touch-action: auto; }
 .board-input.share { height: 120px; font-size: 14px; font-weight: 700; resize: none; }
-.board-list { width: 100%; max-height: 42vh; overflow-y: auto; display: flex; flex-direction: column; gap: 6px; }
+.board-list { width: 100%; max-height: 48vh; overflow-y: auto; scrollbar-width: thin; scrollbar-color: var(--pink) transparent; padding-right: 2px; display: flex; flex-direction: column; gap: 6px; }
 .board-row { display: flex; align-items: center; gap: 10px; padding: 8px 12px; border-radius: 12px; background: rgba(43,43,45,.08);
   font-weight: 900; font-size: 17px; }
 .board-row.me { background: var(--pink); }
@@ -292,3 +292,10 @@ button { font: inherit; border: 0; background: none; color: inherit; padding: 0;
 .board-month { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 8px; font-weight: 900; font-size: 16px; letter-spacing: 1px; }
 .board-month .pill.dim { opacity: .3; pointer-events: none; }
 a.pill { text-decoration: none; display: inline-block; color: var(--charcoal); }
+/* lists you scroll with a finger (the scoreboard's top 100, the shop): #ui blocks finger gestures so the game
+   never zooms or drags, so these opt back in to vertical scrolling */
+.board-list, .shop-list { touch-action: pan-y; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; }
+.board-list * , .shop-list * { touch-action: pan-y; }
+.board-more { font-size: 12px; font-weight: 900; letter-spacing: 1px; color: var(--pink); text-align: center; margin-top: -4px; }
+.board-list::-webkit-scrollbar { width: 5px; }
+.board-list::-webkit-scrollbar-thumb { background: var(--pink); border-radius: 3px; }
