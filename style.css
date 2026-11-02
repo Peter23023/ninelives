@@ -1,6 +1,7 @@
 /* Nine Lives in the browser: the Android app's look (ui/Screens.kt) in CSS.
    Brand colours: charcoal #2B2B2D, off-white #F4EFE6, pink #D99AA1, red #B0384A. */
 :root {
+  color-scheme: only light; /* the game draws its own colours: phones in dark mode must not recolour it */
   --charcoal: #2B2B2D; --offwhite: #F4EFE6; --pink: #D99AA1; --red: #B0384A;
   --font: system-ui, -apple-system, "Helvetica Neue", Roboto, Arial, sans-serif;
   --safe-top: env(safe-area-inset-top, 0px); --safe-bottom: env(safe-area-inset-bottom, 0px);
@@ -290,3 +291,4 @@ button { font: inherit; border: 0; background: none; color: inherit; padding: 0;
 #nl-toast.show { opacity: 1; transform: translate(-50%, 0); }
 .board-month { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 8px; font-weight: 900; font-size: 16px; letter-spacing: 1px; }
 .board-month .pill.dim { opacity: .3; pointer-events: none; }
+a.pill { text-decoration: none; display: inline-block; color: var(--charcoal); }
